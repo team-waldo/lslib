@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using CommandLineParser.Arguments;
-using LSLib.Granny.Model;
 using LSLib.LS.Enums;
 
 namespace Divine.CLI
@@ -233,36 +232,6 @@ namespace Divine.CLI
                     throw new ArgumentException($"Unknown game: \"{game}\"");
                 }
             }
-        }
-
-        public static ExportFormat GetModelFormatByString(string format)
-        {
-            switch (format.ToLower())
-            {
-                case "gr2":
-                {
-                    return ExportFormat.GR2;
-                }
-                case "dae":
-                {
-                    return ExportFormat.DAE;
-                }
-                default:
-                {
-                    throw new ArgumentException($"Unknown model format: {format}");
-                }
-            }
-        }
-
-        public static ExportFormat GetModelFormatByPath(string path)
-        {
-            string extension = Path.GetExtension(path);
-            if (extension != null)
-            {
-                return GetModelFormatByString(extension.Substring(1));
-            }
-
-            throw new ArgumentException($"Could not determine model format from filename: {path}");
         }
 
         // ReSharper disable once RedundantCaseLabel

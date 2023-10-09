@@ -24,6 +24,7 @@ namespace LSLib.LS
             var settings = new XmlWriterSettings();
             settings.Indent = PrettyPrint;
             settings.IndentChars = "\t";
+            settings.CheckCharacters = false;
 
             using (this.writer = XmlWriter.Create(stream, settings))
             {

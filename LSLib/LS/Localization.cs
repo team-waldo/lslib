@@ -1,15 +1,9 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using LZ4;
-using File = Alphaleonis.Win32.Filesystem.File;
-using LSLib.LS.Enums;
 using System.Collections.Generic;
-using LSLib.Granny;
 using System.Xml;
-using System.Diagnostics;
 
 namespace LSLib.LS
 {
